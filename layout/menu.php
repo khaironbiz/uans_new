@@ -40,7 +40,7 @@ $anggota        = mysqli_fetch_array($sql_anggota);
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="<?= $site_url?>/pasien/data-base.php">Data Base Pasien</a></li>
-                            <li><a class="dropdown-item" href="<?= $site_url?>/video/kategori.php">Kategori</a></li>
+                            <li><a class="dropdown-item" href="<?= $site_url?>/pasien/daftar.php">Pasien dirawat</a></li>
                             <li><a class="dropdown-item" href="<?= $site_url?>/video/channel.php">Channel</a></li>
                         </ul>
                     </li>
