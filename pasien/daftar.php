@@ -15,6 +15,9 @@ include('../layout/menu.php');
             <div class="col-md-2"> 
                 <input type="text" class="form-control" name="keyword" id="keyword" placeholder="KeyWord" autofocus autocomplete="off">
             </div>
+            <div class="col-md-2"> 
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Tambah Pasien</button>
+            </div>
             
         <div>
         <div class="row justify-content-center"> 
@@ -106,34 +109,6 @@ include('../layout/menu.php');
     
 </section>
 <?php
-if(isset($_POST['nrm'])){
-    $nama       = $_POST['nama'];
-    $nrm        = $_POST['nrm'];
-    $sex        = $_POST['sex'];
-    $agama      = $_POST['agama'];
-    $pendidikan = $_POST['pendidikan'];
-    $tgl_lahir  = $_POST['tgl_lahir'];
-    $wktu_masuk = $_POST['waktu_masuk'];
-    $dx_medis   = $_POST['dx_medis'];
-    $sql_nrm    = mysqli_query($host, "SELECT * FROM pasien_db WHERE nrm='$nrm'");
-    $count_nrm  = mysqli_num_rows($sql_nrm);
-    if($count_nrm <1){
-    $tambah_px  = mysqli_query($host, "INSERT INTO pasien_db SET
-                    nama        = '$nama',
-                    nrm         = '$nrm',
-                    sex         = '$sex',
-                    pendidikan  = '$pendidikan',
-                    agama       = '$agama',
-                    tgl_lahir   = '$tgl_lahir'");
-        if($tambah_px){
-            $daftar = mysqli_query($host, "INSERT INTO pasien_daftar SET
-                        nrm         = '$nrm',
-                        waktu_masuk = '$wktu_masuk',
-                        dx_medis    = '$dx_medis'
-                        ");
-            echo "<script>document.location=\"$site_url/pasien/data-base.php\"</script>";
-        }
-    }
-}
+include('input-pasien.php');
 include('../layout/footer.php');
 ?>

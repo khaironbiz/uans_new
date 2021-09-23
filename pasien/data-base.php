@@ -108,5 +108,6 @@ include('../layout/menu.php');
 </section>
 
 <?php
+include('input-pasien.php');
 include('../layout/footer.php');
 ?>
