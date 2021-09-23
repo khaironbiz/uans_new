@@ -41,11 +41,13 @@ include('../layout/menu.php');
                             $previous = $halaman - 1;
                             $next = $halaman + 1;
                             
-                            $data = mysqli_query($host,"select * from pasien_db");
+                            $data = mysqli_query($host,"select * from pasien_daftar WHERE keluar='0'");
                             $jumlah_data = mysqli_num_rows($data);
                             $total_halaman = ceil($jumlah_data / $batas);
             
-                            $data_pegawai = mysqli_query($host,"select * from pasien_db order by nama limit $halaman_awal, $batas");
+                            $data_pegawai = mysqli_query($host,"select * from pasien_daftar 
+                                                JOIN pasien_db on pasien_db.nrm=pasien_daftar.nrm
+                                                WHERE pasien_daftar.keluar='0' order by nama limit $halaman_awal, $batas");
                             $nomor = $halaman_awal+1;
                             while($d = mysqli_fetch_array($data_pegawai)){
 
