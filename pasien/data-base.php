@@ -181,14 +181,23 @@ include('../layout/menu.php');
                             $data_pegawai = mysqli_query($host,"select * from pasien_db order by nama limit $halaman_awal, $batas");
                             $nomor = $halaman_awal+1;
                             while($d = mysqli_fetch_array($data_pegawai)){
+                                //agama
+                                $id_agama   = $d['agama'];
+                                $sql_agama  = mysqli_query($host, "SELECT * FROM db_sub_master WHERE id='$id_agama'");
+                                $agama      = mysqli_fetch_array($sql_agama);
+                                //jenis kelamin
+                                $id_sex     = $d['sex'];
+                                $sql_sex    = mysqli_query($host, "SELECT * FROM db_sub_master WHERE id='$id_sex'");
+                                $sex        = mysqli_fetch_array($sql_sex);
+
                                 ?>
                                 <tr>
                                     <td><?= $nomor++; ?></td>
                                     <td><?= $d['nama']; ?></td>
                                     <td><?= $d['nrm']; ?></td>
-                                    <td><?= $d['sex']; ?></td>
+                                    <td><?= $sex['nama_submaster']; ?></td>
                                     <td><?= $d['tgl_lahir']; ?></td>
-                                    <td><?= $d['agama']; ?></td>
+                                    <td><?= $agama['nama_submaster']; ?></td>
                                     <td><a class="btn btn-success btn-sm" href="#">Daftar</a></td>
                                 </tr>
                                 <?php
