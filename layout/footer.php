@@ -6,11 +6,11 @@
         <div class="row text-center mb-5">
             <div class="col-md-4">
                 <h5><?= $nama_perusahaan?></h5>
-                <p><?= $deskripsi_web?></p>
+                <p><?= $alamat_perusahaan?></p>
             </div>
             <div class="col-md-4">
                 <h5>Office</h5>
-                <p><?= $alamat_perusahaan?></p>
+                <p><?= $deskripsi_web?></p>
             </div>
             <div class="col-md-4 sosial-media">
                 <h5>Sosial Media</h5>
