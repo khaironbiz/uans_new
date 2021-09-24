@@ -8,7 +8,7 @@ include 'auth/site.php'; ?>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-    <link rel="icon" href="image/LOGO-PPNI-TER-HAKI.png">
+    <link rel="icon" href="assets/img/favicon.ico">
     <!--===============================================================================================-->	
         <link rel="icon" type="image/png" href="https://ppni.or.id/admin/images/icons/favicon.ico"/>
     <!--===============================================================================================-->
@@ -24,8 +24,7 @@ include 'auth/site.php'; ?>
 			<div class="wrap-login100">
 				<div class="login100-form-title" style="background-image: url(https://ppni.or.id/admin/login1/images/bg-01.jpg);">
 					<span class="login100-form-title-1">
-						ACARA KESEHATAN <br>
-						LOGIN
+						DPK PPNI RSPON
 					</span>
 				</div>
 				<form class="login100-form validate-form" action="auth/login.php" method="POST">

@@ -1,8 +1,8 @@
 <?php
 session_start();
 $user_check=$_SESSION['login_user'];
-if($user_check ==""){
-    header("location: /ak"); // Mengarahkan ke halaman profil
+if(!$user_check){
+    echo "<script>document.location=\"$site_url\"</script>";
 }
 $sql_anggota    = mysqli_query($host, "SELECT * FROM nira WHERE nira='$user_check'");
 $anggota        = mysqli_fetch_array($sql_anggota);
@@ -11,7 +11,7 @@ $anggota        = mysqli_fetch_array($sql_anggota);
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="http://ppni.rspon.net/assets/img/logo.png" alt="" width="50" class="d-inline-block align-top">
-                Acara Kesehatan            </a>
+               <?= $nama_web; ?>            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

@@ -3,7 +3,7 @@
             <div class="row text-center mb-5">
                 <div class="col-md-4">
                     <h5>Office</h5>
-                    <p>Jl. MT Hartono Kavling 11 Cawang, Jakarta Timur, DKI Jakarta</p>
+                    <p><?= $alamat_perusahaan?></p>
                 </div>
                 <div class="col-md-4">
                     <h5>Acara Kesehatan</h5>
