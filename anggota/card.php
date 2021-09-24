@@ -23,7 +23,7 @@
         <div class="card-body pb-0">
           <div class="row">
             <?php
-            $batas = 20;
+            $batas = 30;
             $halaman = isset($_GET['halaman'])?(int)$_GET['halaman'] : 1;
             $halaman_awal = ($halaman>1) ? ($halaman * $batas) - $batas : 0;	
             $previous = $halaman - 1;
