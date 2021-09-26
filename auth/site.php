@@ -1,6 +1,6 @@
 <?php
 //site local
-$site_url           = "http://localhost/uas_new";
+$site_url           = "http://localhost/uans_new";
 //$site_url           = "https://ppni.rspon.net";
 $nama_web           = "DPK PPNI RSPON";
 $nama_perusahaan    = "DPK PPNI RSPON";

@@ -65,6 +65,18 @@ $anggota        = mysqli_fetch_array($sql_anggota);
                             <li><a class="dropdown-item" href="<?= $site_url?>/anggota">Anggota</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Ruangan
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="<?= $site_url?>/ruangan">Rawat Inap</a></li>
+                            <li><a class="dropdown-item" href="<?= $site_url?>/ruangan/intensif.php">Rawat Intensif</a></li>
+                            <li><a class="dropdown-item" href="<?= $site_url?>/ruangan/ibs.php">Kamar Bedah</a></li>
+                            <li><a class="dropdown-item" href="<?= $site_url?>/ruangan/poli.php">Rawat Jalan</a></li>
+                            <li><a class="dropdown-item" href="<?= $site_url?>/ruangan/igd.php">IGD</a></li>
+                        </ul>
+                    </li>
                     <?php
                         if($user_check !=""){
                         ?>
