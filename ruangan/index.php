@@ -67,22 +67,24 @@ include('../layout/menu.php');
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
-                                                    <div class="mb-3 row">
-                                                        <label for="staticEmail" class="col-sm-4 col-form-label">Nama Ruangan</label>
+                                                        <div class="mb-3 row">
+                                                            <label class="col-sm-4 col-form-label">Nama Ruangan</label>
                                                             <div class="col-sm-8">
-                                                                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= $d['ruangan']; ?>">
+                                                                <select class="form-select" required name="id_ruangan">
+                                                                    <option value="<?= $d['id']?>"><?= $d['ruangan']?></option>
+                                                                    
                                                             </div>
                                                         </div>
                                                         <div class="mb-3 row">
-                                                            <label for="inputPassword" class="col-sm-4 col-form-label">Nama Kamar</label>
+                                                            <label class="col-sm-4 col-form-label">Nama Kamar</label>
                                                             <div class="col-sm-8">
-                                                                <input type="text" class="form-control" id="inputPassword">
+                                                                <input type="text" class="form-control" name="nama_kamar">
                                                             </div>
                                                         </div>
                                                         <div class="mb-3 row">
                                                             <label for="inputPassword" class="col-sm-4 col-form-label">Kelas Perawatan</label>
                                                             <div class="col-sm-8">
-                                                                <select class="form-select" required name="id_kelas_perawatan">
+                                                                <select class="form-select" required name="id_kelas_perawatan" name="id_kelas_perawatan">
                                                                     <option value="">---Pilih---</option>
                                                                     <?php
                                                                     $sql_kelas_per  = mysqli_query($host, "SELECT * FROM db_sub_master WHERE id_master='25'");
@@ -96,14 +98,11 @@ include('../layout/menu.php');
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                                         <button type="button" class="btn btn-primary">Save changes</button>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-
-
                                     <?php
                                     $id_ruangan = $d['id'];
                                     $sql_kamar  = mysqli_query($host, "SELECT * FROM ruangan_kamar WHERE id_ruangan='$id_ruangan'");
