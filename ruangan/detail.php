@@ -16,71 +16,71 @@ $ruangan        = mysqli_fetch_array($sql_ruangan);
         </div>
         <div class="row justify-content-center">
             <div class="col-md-2"> 
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-kamar">
-                                        Add Kamar
-                </button>
-                <form action="" method="POST">
-                    <!-- Modal -->
-                    <div class="modal fade" id="add-kamar" tabindex="-1" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Tambah Kamar</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="mb-3 row">
-                                        <label class="col-sm-4 col-form-label">Nama Ruangan</label>
-                                        <div class="col-sm-8">
-                                            <select class="form-select" required name="id_ruangan">
-                                                <option value="<?= $ruangan['id']?>"><?= $ruangan['ruangan']?></option>
-                                                </select>    
-                                        </div>
-                                    </div>
-                                    <div class="mb-3 row">
-                                        <label class="col-sm-4 col-form-label">Nomor Kamar</label>
-                                        <div class="col-sm-8">
-                                            <input type="text" class="form-control" name="no_kamar">
-                                        </div>
-                                    </div>
-                                    <div class="mb-3 row">
-                                        <label class="col-sm-4 col-form-label">Nama Kamar</label>
-                                        <div class="col-sm-8">
-                                            <input type="hidden" class="form-control" name="has_ruangan" value="<?= $ruangan['has_ruangan']?>">
-                                            <input type="text" class="form-control" name="nama_kamar">
-                                        </div>
-                                    </div>
-                                    <div class="mb-3 row">
-                                        <label for="inputPassword" class="col-sm-4 col-form-label">Kelas Perawatan</label>
-                                        <div class="col-sm-8">
-                                            <select class="form-select" required name="id_kelas_perawatan">
-                                                <option value="">---Pilih---</option>
-                                                <?php
-                                                $sql_kelas_per  = mysqli_query($host, "SELECT * FROM db_sub_master WHERE id_master='25'");
-                                                while($data_kelas=mysqli_fetch_array($sql_kelas_per)){
-                                                ?>
-                                                <option value="<?= $data_kelas['id']?>"><?= $data_kelas['nama_submaster']?></option>
-                                                <?php
-                                                }
-                                                ?>
-                                            </select> 
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="submit" class="btn btn-primary">Tambah Kamar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
             </div>
             <div>
                 <div class="row justify-content-center"> 
                     <div class="col-md-6">
                         <div class="table-responsive mt-2 " id="container">
                             <h3><?= $ruangan['ruangan']?></h3>
-                            <table class="table table-bordered">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-kamar">
+                                                    Add Kamar
+                            </button>
+                            <form action="" method="POST">
+                                <!-- Modal -->
+                                <div class="modal fade" id="add-kamar" tabindex="-1" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Tambah Kamar</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-4 col-form-label">Nama Ruangan</label>
+                                                    <div class="col-sm-8">
+                                                        <select class="form-select" required name="id_ruangan">
+                                                            <option value="<?= $ruangan['id']?>"><?= $ruangan['ruangan']?></option>
+                                                            </select>    
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-4 col-form-label">Nomor Kamar</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control" name="no_kamar">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-4 col-form-label">Nama Kamar</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="hidden" class="form-control" name="has_ruangan" value="<?= $ruangan['has_ruangan']?>">
+                                                        <input type="text" class="form-control" name="nama_kamar">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label for="inputPassword" class="col-sm-4 col-form-label">Kelas Perawatan</label>
+                                                    <div class="col-sm-8">
+                                                        <select class="form-select" required name="id_kelas_perawatan">
+                                                            <option value="">---Pilih---</option>
+                                                            <?php
+                                                            $sql_kelas_per  = mysqli_query($host, "SELECT * FROM db_sub_master WHERE id_master='25'");
+                                                            while($data_kelas=mysqli_fetch_array($sql_kelas_per)){
+                                                            ?>
+                                                            <option value="<?= $data_kelas['id']?>"><?= $data_kelas['nama_submaster']?></option>
+                                                            <?php
+                                                            }
+                                                            ?>
+                                                        </select> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-primary">Tambah Kamar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <table class="table table-bordered table-sm">
                                 <thead class="thead-dark">
                                     <tr>
                                         <th>No</th>
@@ -107,7 +107,7 @@ $ruangan        = mysqli_fetch_array($sql_ruangan);
                                             <td></td>
                                             <td>
                                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-bed<?= $d['no_kamar']; ?>">
-                                                    Add Kamar
+                                                    Add Bed
                                                 </button>
                                                 <form action="" method="POST">
                                                     <!-- Modal -->
@@ -177,6 +177,9 @@ $ruangan        = mysqli_fetch_array($sql_ruangan);
                                         <?php
                                     }
                                     ?>
+                                    <tr>
+                                        <td colspan="4"><a href="#" class="btn btn-danger btn-sm">Back</a></td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
