@@ -50,59 +50,9 @@ include('../layout/menu.php');
                                     <td></td>
                                     <td></td>
                                     <td>
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $d['id']?>">
-                                        Add Kamar
-                                        </button>
+                                        <a href="<?= $site_url?>/ruangan/detail.php?id=<?= $d['has_ruangan']?>" class="btn btn-success btn-sm">Detail</a>
                                     </td>
 
-                                        <!-- Button trigger modal -->
-                                        
-
-                                        <!-- Modal -->
-                                        <div class="modal fade" id="exampleModal<?= $d['id']?>" tabindex="-1" aria-hidden="true">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLabel">Tambah Kamar</h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <div class="mb-3 row">
-                                                            <label class="col-sm-4 col-form-label">Nama Ruangan</label>
-                                                            <div class="col-sm-8">
-                                                                <select class="form-select" required name="id_ruangan">
-                                                                    <option value="<?= $d['id']?>"><?= $d['ruangan']?></option>
-                                                                    
-                                                            </div>
-                                                        </div>
-                                                        <div class="mb-3 row">
-                                                            <label class="col-sm-4 col-form-label">Nama Kamar</label>
-                                                            <div class="col-sm-8">
-                                                                <input type="text" class="form-control" name="nama_kamar">
-                                                            </div>
-                                                        </div>
-                                                        <div class="mb-3 row">
-                                                            <label for="inputPassword" class="col-sm-4 col-form-label">Kelas Perawatan</label>
-                                                            <div class="col-sm-8">
-                                                                <select class="form-select" required name="id_kelas_perawatan" name="id_kelas_perawatan">
-                                                                    <option value="">---Pilih---</option>
-                                                                    <?php
-                                                                    $sql_kelas_per  = mysqli_query($host, "SELECT * FROM db_sub_master WHERE id_master='25'");
-                                                                    while($data_kelas=mysqli_fetch_array($sql_kelas_per)){
-                                                                    ?>
-                                                                    <option value="1"><?= $data_kelas['nama_submaster']?></option>
-                                                                    <?php
-                                                                    }
-                                                                    ?>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-primary">Save changes</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                     <?php
                                     $id_ruangan = $d['id'];
                                     $sql_kamar  = mysqli_query($host, "SELECT * FROM ruangan_kamar WHERE id_ruangan='$id_ruangan'");
@@ -134,9 +84,9 @@ include('../layout/menu.php');
             </div>
         </div>
     </div>
-    
 </section>
 
 <?php
+
 include('../layout/footer.php');
 ?>
