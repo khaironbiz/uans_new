@@ -139,9 +139,13 @@ if(isset($_POST['nrm'])){
     $tgl_lahir  = $_POST['tgl_lahir'];
     $wktu_masuk = $_POST['waktu_masuk'];
     $dx_medis   = $_POST['dx_medis'];
+    //count px di db
     $sql_nrm    = mysqli_query($host, "SELECT * FROM pasien_db WHERE nrm='$nrm'");
     $count_nrm  = mysqli_num_rows($sql_nrm);
-    if($count_nrm <1){
+    //count px daftar
+    $sql_px     = mysqli_query($host, "SELECT * FROM pasien_daftar WHERE nrm='$nrm'");
+    $count_px   = mysqli_num_rows($sql_px);
+    if($count_nrm <1 and $count_px <1){
     $tambah_px  = mysqli_query($host, "INSERT INTO pasien_db SET
                     nama        = '$nama',
                     nrm         = '$nrm',
@@ -155,8 +159,15 @@ if(isset($_POST['nrm'])){
                         waktu_masuk = '$wktu_masuk',
                         dx_medis    = '$dx_medis'
                         ");
-            echo "<script>document.location=\"$site_url/pasien/data-base.php\"</script>";
+            echo "<script>document.location=\"$site_url/pasien/daftar.php\"</script>";
         }
+    }if($count_px <1){
+        $daftar = mysqli_query($host, "INSERT INTO pasien_daftar SET
+                        nrm         = '$nrm',
+                        waktu_masuk = '$wktu_masuk',
+                        dx_medis    = '$dx_medis'
+                        ");
+            echo "<script>document.location=\"$site_url/pasien/daftar.php\"</script>";
     }
 }
 ?>

@@ -12,9 +12,7 @@ include('../layout/menu.php');
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-md-2"> 
-                <input type="text" class="form-control" name="keyword" id="keyword" placeholder="KeyWord" autofocus autocomplete="off">
-            </div>
+            
             <div class="col-md-2"> 
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Tambah Pasien</button>
             </div>
@@ -102,7 +100,6 @@ include('../layout/menu.php');
                     }
                     ?>
                 </div>
-                <script src="../assets/js/script-pasien.js"></script>
             </div>
         </div>
     </div>
