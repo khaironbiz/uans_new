@@ -145,7 +145,7 @@ if(isset($_POST['nrm'])){
     //count px daftar
     $sql_px     = mysqli_query($host, "SELECT * FROM pasien_daftar WHERE nrm='$nrm'");
     $count_px   = mysqli_num_rows($sql_px);
-    if($count_nrm <1 and $count_px <1){
+    if($count_nrm <1){
     $tambah_px  = mysqli_query($host, "INSERT INTO pasien_db SET
                     nama        = '$nama',
                     nrm         = '$nrm',
@@ -153,15 +153,9 @@ if(isset($_POST['nrm'])){
                     pendidikan  = '$pendidikan',
                     agama       = '$agama',
                     tgl_lahir   = '$tgl_lahir'");
-        if($tambah_px){
-            $daftar = mysqli_query($host, "INSERT INTO pasien_daftar SET
-                        nrm         = '$nrm',
-                        waktu_masuk = '$wktu_masuk',
-                        dx_medis    = '$dx_medis'
-                        ");
-            echo "<script>document.location=\"$site_url/pasien/daftar.php\"</script>";
-        }
-    }if($count_px <1){
+        
+    }
+    if($count_px <1){
         $daftar = mysqli_query($host, "INSERT INTO pasien_daftar SET
                         nrm         = '$nrm',
                         waktu_masuk = '$wktu_masuk',

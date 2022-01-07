@@ -1,10 +1,10 @@
 <div class="wrapper">
   <?php
-  $atas     = "../menu/atas.php";
-  $samping  = "../menu/samping.php";
-  $footer   = "../menu/footer.php";
-  include($atas);
-  include($samping);
+  $menu_atas      = "../layout/menu/atas.php";
+  $menu_samping   = "../layout/menu/samping.php";
+  $footer         = "../layout/menu/footer.php";
+  include($menu_atas);
+  include($menu_samping);
   include($content);
   include($footer);
   ?>
