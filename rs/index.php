@@ -4,7 +4,7 @@ include('../layout/header.php');
 include('../layout/menu.php');
 ?>
 <section id="event">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row text-white">
             <div class="col text-center ">
                 <h2>DAFTAR RUMAH SAKIT</h2>

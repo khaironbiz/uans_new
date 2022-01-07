@@ -14,13 +14,25 @@ $query_anggota  = mysqli_query($host, $sql_anggota);
 ?>
 
     <div class="container mt-5">
-        <div class="row mt-5">
-            <h3>Daftar Anggota</h3>
-                <div class="col-md-4"> 
-                    <input type="text" class="form-control" 
-                        name="keyword" id="keyword" placeholder="KeyWord" autofocus autocomplete="off">
+        <div class="card mt-5">
+            <div class="card-header bg-black">
+                <div class="row justify-content-end">
+                    <div class="col-md-10">
+                        <h3>Daftar Anggota</h3>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="text" class="form-control form-control-sm" 
+                                name="keyword" id="keyword" placeholder="KeyWord" autofocus autocomplete="off">
+                    </div>
                 </div>
-        <div>
+                
+            </div>
+            <div class="row">
+                
+                
+            <div>
+        </div>
+        
         <div class="row">
             <did clas="col-md-12" id="container">
                 <table class="table table-striped">
